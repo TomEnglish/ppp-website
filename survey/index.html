@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Pony Plunge - Follow-Up Survey</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #E86263 0%, #B098C4 50%, #58AFDC 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #E86263 0%, #EB796F 25%, #B098C4 50%, #56ADDA 75%, #58AFDC 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(88,175,220,0.2);
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #E86263, #58AFDC);
+            transition: width 0.4s ease;
+            width: 0%;
+        }
+
+        .progress-label {
+            text-align: center;
+            padding: 8px;
+            font-size: 0.85rem;
+            color: #6C757D;
+            background: #FBFDFC;
+        }
+
+        .content { padding: 40px 30px; }
+
+        .intro-message {
+            background: #fdf2f8;
+            border-left: 4px solid #E86263;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .intro-message h3 { color: #831843; margin-bottom: 10px; }
+        .intro-message p { color: #212529; line-height: 1.6; margin-bottom: 10px; }
+        .intro-message ul { margin-left: 20px; color: #212529; line-height: 1.8; }
+
+        /* Sections */
+        .section { margin-bottom: 40px; display: none; }
+        .section.active { display: block; animation: fadeIn 0.4s ease; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #831843 0%, #E86263 100%);
+            color: #FFFFFF;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .section-header h2 { font-size: 1.5rem; margin-bottom: 5px; }
+        .section-header p { opacity: 0.9; font-size: 0.9rem; }
+
+        /* Questions */
+        .question { margin-bottom: 30px; }
+
+        .question-label {
+            display: block;
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        .question-helper {
+            display: block;
+            color: #6C757D;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .sub-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #6C757D;
+        }
+
+        .input-group { margin-top: 8px; }
+
+        /* Form controls */
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="url"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #E7E7E7;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+            font-family: inherit;
+            color: #212529;
+            background: #FFFFFF;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #58AFDC;
+            box-shadow: 0 0 0 3px rgba(88,175,220,0.2);
+        }
+
+        textarea { min-height: 120px; resize: vertical; }
+
+        /* Radio & Checkbox groups */
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .radio-option, .checkbox-option {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border: 2px solid #E7E7E7;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: border-color 0.25s ease, background 0.25s ease;
+        }
+
+        .radio-option:hover, .checkbox-option:hover {
+            border-color: #E86263;
+            background: #fdf2f8;
+        }
+
+        .radio-option input[type="radio"],
+        .checkbox-option input[type="checkbox"] {
+            margin-right: 12px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #E86263;
+        }
+
+        .radio-option.selected, .checkbox-option.selected {
+            border-color: #E86263;
+            background: #fdf2f8;
+        }
+
+        /* Info & Warning boxes */
+        .info-box {
+            background: rgba(88,175,220,0.1);
+            border-left: 4px solid #58AFDC;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.9rem;
+            color: #212529;
+        }
+
+        .warning-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.9rem;
+            color: #212529;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            gap: 15px;
+        }
+
+        button {
+            padding: 14px 32px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #E86263 0%, #EB796F 100%);
+            color: #FFFFFF;
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(232, 98, 99, 0.3);
+        }
+
+        .btn-secondary {
+            background: #FFFFFF;
+            color: #E86263;
+            border: 2px solid #E86263;
+        }
+
+        .btn-secondary:hover { background: #fdf2f8; }
+
+        button:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+
+        /* Summary */
+        .summary { display: none; }
+        .summary.active { display: block; animation: fadeIn 0.4s ease; }
+
+        .summary-section {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .summary-section h3 { color: #831843; margin-bottom: 15px; font-size: 1.2rem; }
+
+        .summary-item {
+            padding: 12px;
+            background: #FFFFFF;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border-left: 3px solid #E86263;
+        }
+
+        .summary-item strong { color: #212529; display: block; margin-bottom: 5px; }
+        .summary-item span { color: #6C757D; white-space: pre-wrap; }
+
+        /* Success */
+        .success-message {
+            text-align: center;
+            padding: 40px;
+            display: none;
+        }
+
+        .success-message .icon { font-size: 4rem; margin-bottom: 20px; }
+        .success-message h2 { color: #831843; margin-bottom: 15px; }
+        .success-message p { color: #6C757D; line-height: 1.8; }
+
+        .download-btns {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .download-btns button { flex: none; }
+
+        .btn-ice {
+            background: linear-gradient(135deg, #56ADDA 0%, #58AFDC 100%);
+            color: #FFFFFF;
+        }
+
+        .btn-ice:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(88, 175, 220, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8rem; }
+            .content { padding: 30px 20px; }
+            .buttons { flex-direction: column; }
+            button { width: 100%; }
+            .download-btns { flex-direction: column; align-items: stretch; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PINK PONY PLUNGE</h1>
+            <p>Follow-Up Questions &mdash; Final Details Needed</p>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-label" id="progressLabel">Section 1 of 5</div>
+
+        <div class="content">
+            <!-- Intro -->
+            <div class="intro-message" id="introMsg">
+                <h3>Quick Follow-Up Survey</h3>
+                <p>Thanks for all the detailed planning documents! This short survey covers the remaining decisions needed to finalize the website and launch plan.</p>
+                <ul>
+                    <li>Final confirmation items (domain, social handles)</li>
+                    <li>Operational policy details</li>
+                    <li>Photography and content plans</li>
+                    <li>Business/legal specifics</li>
+                    <li>Brand &amp; marketing direction</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Time to complete:</strong> 5-8 minutes</p>
+            </div>
+
+            <!-- Section 0: Respondent Info -->
+            <div class="section active" data-section="0">
+                <div class="section-header">
+                    <h2>Your Info</h2>
+                    <p>So we know who submitted this</p>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">Your Name</label>
+                    <input type="text" name="respondent_name" placeholder="First and last name" required>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">Your Role / Relationship to PPP</label>
+                    <input type="text" name="respondent_role" placeholder="e.g., Co-founder, Advisor, Marketing lead">
+                </div>
+            </div>
+
+            <!-- Section 1: Confirmations -->
+            <div class="section" data-section="1">
+                <div class="section-header">
+                    <h2>Section 1: Confirmations</h2>
+                    <p>Let's confirm a few key items from your planning docs</p>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">1. Domain Name Status</label>
+                    <span class="question-helper">Your docs mention pinkponyplunge.com as "recommended"</span>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="q1" value="Already secured pinkponyplunge.com"><span>Already secured pinkponyplunge.com</span></label>
+                        <label class="radio-option"><input type="radio" name="q1" value="Will secure it this week"><span>Will secure it this week (confirm it's available)</span></label>
+                        <label class="radio-option"><input type="radio" name="q1" value="Need alternative domain"><span>Need alternative domain (pinkponyplunge.com taken)</span></label>
+                    </div>
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="sub-label">If alternative needed, what domain?</label>
+                        <input type="text" name="q1_alt" placeholder="e.g., pinkpony-plunge.com, thepinkponyplunge.com">
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">2. Social Media Handles</label>
+                    <span class="question-helper">Target: @pinkponyplunge on Instagram and Facebook</span>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="q2" value="Already claimed on both platforms"><span>Already claimed @pinkponyplunge on both platforms</span></label>
+                        <label class="radio-option"><input type="radio" name="q2" value="Will claim this week"><span>Will claim this week (confirmed available)</span></label>
+                        <label class="radio-option"><input type="radio" name="q2" value="Handle taken, need alternative"><span>Handle taken, need alternative</span></label>
+                    </div>
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="sub-label">If alternative needed, what handles?</label>
+                        <input type="text" name="q2_alt" placeholder="e.g., @pinkponyplunge_sc, @pinkpony.plunge">
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">3. Service Radius</label>
+                    <span class="question-helper">Your docs mention "Upstate SC region" &mdash; what's the specific radius?</span>
+                    <select name="q3">
+                        <option value="">Select service radius...</option>
+                        <option value="15 miles from Campobello">15 miles from Campobello</option>
+                        <option value="25 miles from Campobello">25 miles from Campobello</option>
+                        <option value="35 miles from Campobello">35 miles from Campobello</option>
+                        <option value="50 miles from Campobello">50 miles from Campobello</option>
+                        <option value="Custom radius">Custom radius (specify below)</option>
+                    </select>
+                    <input type="text" name="q3_custom" placeholder="If custom, specify miles and/or specific cities" style="margin-top: 10px;">
+                    <div class="info-box">
+                        <strong>Reference:</strong> Campobello to Spartanburg ~25 mi, to Greenville ~35 mi, to Tryon ~5 mi, to Landrum ~8 mi
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">4. Delivery/Setup Fee Structure</label>
+                    <span class="question-helper">How will you charge for delivery and setup?</span>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="q4" value="Included in session price"><span>Included in session price (no separate fee)</span></label>
+                        <label class="radio-option"><input type="radio" name="q4" value="Flat fee regardless of distance"><span>Flat fee regardless of distance</span></label>
+                        <label class="radio-option"><input type="radio" name="q4" value="Per-mile rate"><span>Per-mile rate</span></label>
+                        <label class="radio-option"><input type="radio" name="q4" value="Tiered by distance"><span>Tiered by distance (e.g., 0-15 mi free, 15-25 mi $X, etc.)</span></label>
+                    </div>
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="sub-label">Specify fee amounts/structure:</label>
+                        <input type="text" name="q4_details" placeholder="e.g., $50 flat fee, or $2/mile, or 0-15 free, 15-30 $30, etc.">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Operational Policies -->
+            <div class="section" data-section="2">
+                <div class="section-header">
+                    <h2>Section 2: Operational Policies</h2>
+                    <p>Define your booking and service policies</p>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">5. Deposit Amount</label>
+                    <span class="question-helper">What percentage deposit is required to confirm a booking?</span>
+                    <select name="q5">
+                        <option value="">Select deposit structure...</option>
+                        <option value="25% deposit">25% deposit</option>
+                        <option value="50% deposit">50% deposit</option>
+                        <option value="100% payment upfront">100% payment upfront</option>
+                        <option value="Flat deposit amount">Flat deposit amount (specify)</option>
+                        <option value="No deposit">No deposit (pay on arrival)</option>
+                    </select>
+                    <input type="text" name="q5_details" placeholder="If flat amount or other details, specify here" style="margin-top: 10px;">
+                </div>
+
+                <div class="question">
+                    <label class="question-label">6. Cancellation Policy</label>
+                    <span class="question-helper">How many days notice for full/partial refund?</span>
+                    <select name="q6">
+                        <option value="">Select cancellation policy...</option>
+                        <option value="24 hours notice = full refund">24 hours notice = full refund</option>
+                        <option value="48 hours notice = full refund">48 hours notice = full refund</option>
+                        <option value="72 hours notice = full refund">72 hours (3 days) notice = full refund</option>
+                        <option value="7 days notice = full refund">7 days notice = full refund</option>
+                        <option value="Tiered refund">Tiered refund (different % based on notice)</option>
+                        <option value="No refunds (reschedule only)">No refunds (reschedule only)</option>
+                    </select>
+                    <textarea name="q6_details" placeholder="Specify tiered structure or additional details (e.g., '7 days = 100%, 3 days = 50%, less than 3 days = no refund')" style="margin-top: 10px;"></textarea>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">7. Minimum Booking Notice</label>
+                    <span class="question-helper">How far in advance must customers book?</span>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="q7" value="Same-day bookings accepted"><span>Same-day bookings accepted (subject to availability)</span></label>
+                        <label class="radio-option"><input type="radio" name="q7" value="24 hours minimum"><span>24 hours minimum notice</span></label>
+                        <label class="radio-option"><input type="radio" name="q7" value="48 hours minimum"><span>48 hours (2 days) minimum</span></label>
+                        <label class="radio-option"><input type="radio" name="q7" value="3 days minimum"><span>3 days minimum</span></label>
+                        <label class="radio-option"><input type="radio" name="q7" value="7 days minimum"><span>7 days (1 week) minimum</span></label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">8. On-Site Attendant Policy</label>
+                    <span class="question-helper">Your plan mentions unmanned/self-service. Any exceptions?</span>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option"><input type="checkbox" name="q8" value="Always unmanned - smart lock access only"><span>Always unmanned - smart lock access only</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q8" value="Attendant available as paid add-on"><span>Attendant available as paid add-on ($/hour)</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q8" value="Attendant required for large groups"><span>Attendant required for groups over X people</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q8" value="Attendant included for corporate/weddings"><span>Attendant included for corporate events/weddings</span></label>
+                    </div>
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="sub-label">Additional details on attendant policy:</label>
+                        <textarea name="q8_details" placeholder="e.g., 'Attendant add-on is $25/hour' or 'Required for groups over 8 people'"></textarea>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">9. Weather Contingency Policy</label>
+                    <span class="question-helper">What happens if weather prevents service?</span>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="q9" value="No weather cancellations"><span>No weather cancellations - service operates in all conditions</span></label>
+                        <label class="radio-option"><input type="radio" name="q9" value="Cancellation only for extreme weather"><span>Cancellation only for extreme weather (ice storm, hurricane, etc.)</span></label>
+                        <label class="radio-option"><input type="radio" name="q9" value="Cancel if unsafe travel conditions"><span>Cancel if unsafe travel conditions (we decide day-of)</span></label>
+                        <label class="radio-option"><input type="radio" name="q9" value="Customer can cancel for weather with full refund"><span>Customer can cancel for weather with full refund</span></label>
+                    </div>
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="sub-label">Refund terms for weather cancellations:</label>
+                        <input type="text" name="q9_refund" placeholder="e.g., 'Full refund or free reschedule'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Photography & Content -->
+            <div class="section" data-section="3">
+                <div class="section-header">
+                    <h2>Section 3: Photography & Content</h2>
+                    <p>Planning your visual assets</p>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">10. Professional Photography Status</label>
+                    <span class="question-helper">Do you have photos, or need to schedule a shoot?</span>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="q10" value="Have professional photos ready"><span>I have professional photos ready to use</span></label>
+                        <label class="radio-option"><input type="radio" name="q10" value="Photo shoot scheduled"><span>Photo shoot scheduled (date below)</span></label>
+                        <label class="radio-option"><input type="radio" name="q10" value="Need to schedule a shoot"><span>Need to schedule a professional shoot</span></label>
+                        <label class="radio-option"><input type="radio" name="q10" value="Will take photos myself (DIY)"><span>Will take photos myself (DIY)</span></label>
+                        <label class="radio-option"><input type="radio" name="q10" value="Launch with stock/temp, professional later"><span>Launch with stock/temp photos, professional photos post-launch</span></label>
+                    </div>
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="sub-label">If scheduled, when? If hiring, who?</label>
+                        <input type="text" name="q10_details" placeholder="e.g., 'Photo shoot March 15 with [photographer name]'">
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">11. Photo Categories Needed</label>
+                    <span class="question-helper">Which types of photos do you need/have?</span>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option"><input type="checkbox" name="q11" value="Hero image (wide banner)"><span>Hero image (wide banner for website)</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q11" value="Trailer exterior (vinyl wrap)"><span>Trailer exterior (branded vinyl wrap)</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q11" value="Interior shots"><span>Interior shots (sauna, cold plunge, decor)</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q11" value="Action shots (people using equipment)"><span>People using the equipment (action shots)</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q11" value="Lifestyle/atmospheric"><span>Lifestyle/atmospheric (steam, ice, wellness vibes)</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q11" value="Setup process"><span>Setup process (arrival, installation timelapse)</span></label>
+                    </div>
+                    <div class="warning-box" style="margin-top: 15px;">
+                        <strong>Critical:</strong> You need at minimum: (1) Hero image, (2) Trailer exterior, (3) Interior shots of sauna and cold plunge. These are required before website launch.
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">12. Video Content Plans</label>
+                    <span class="question-helper">Video is huge for social media. What's your plan?</span>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="q12" value="Hiring videographer"><span>Hiring videographer for professional content</span></label>
+                        <label class="radio-option"><input type="radio" name="q12" value="DIY smartphone video"><span>DIY video with smartphone (Instagram Reels style)</span></label>
+                        <label class="radio-option"><input type="radio" name="q12" value="Customer reaction videos"><span>Will capture customer reaction videos (with permission)</span></label>
+                        <label class="radio-option"><input type="radio" name="q12" value="Video after launch"><span>Video content comes after launch (photos first)</span></label>
+                        <label class="radio-option"><input type="radio" name="q12" value="No video planned"><span>No video planned - photos and text only</span></label>
+                    </div>
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="sub-label">Video content ideas or timeline:</label>
+                        <textarea name="q12_details" placeholder="e.g., 'Will film first plunge reactions during soft launch week'"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Business & Legal -->
+            <div class="section" data-section="4">
+                <div class="section-header">
+                    <h2>Section 4: Business & Legal Details</h2>
+                    <p>Final business structure and policy questions</p>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">13. Business Entity Details</label>
+                    <span class="question-helper">What's the official legal name and structure?</span>
+                    <div class="input-group">
+                        <label class="sub-label">Legal business name:</label>
+                        <input type="text" name="q13_name" placeholder="e.g., Pink Pony Plunge LLC">
+                    </div>
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="sub-label">Entity type:</label>
+                        <select name="q13_type">
+                            <option value="">Select entity type...</option>
+                            <option value="Sole Proprietorship">Sole Proprietorship</option>
+                            <option value="LLC">LLC</option>
+                            <option value="S-Corp">S-Corp</option>
+                            <option value="C-Corp">C-Corp</option>
+                            <option value="Currently forming">Currently forming (specify)</option>
+                        </select>
+                    </div>
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="sub-label">State of formation:</label>
+                        <input type="text" name="q13_state" placeholder="e.g., South Carolina">
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">14. Insurance Coverage</label>
+                    <span class="question-helper">General liability insurance details</span>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="q14" value="Already secured coverage"><span>Already secured coverage</span></label>
+                        <label class="radio-option"><input type="radio" name="q14" value="In progress - quotes received"><span>In progress - quotes received</span></label>
+                        <label class="radio-option"><input type="radio" name="q14" value="Need to get quotes"><span>Need to get quotes</span></label>
+                    </div>
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="sub-label">Coverage amount (if known):</label>
+                        <input type="text" name="q14_amount" placeholder="e.g., $1M general liability, $2M aggregate">
+                    </div>
+                    <div class="info-box" style="margin-top: 10px;">
+                        <strong>Recommended:</strong> Minimum $1M general liability. Some venues may require $2M+ and certificate of insurance.
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">15. Liability Waiver Status</label>
+                    <span class="question-helper">Customer waiver/release form</span>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="q15" value="Attorney-drafted waiver ready"><span>Attorney-drafted waiver ready to use</span></label>
+                        <label class="radio-option"><input type="radio" name="q15" value="Using template/online generator"><span>Using template/online generator (RocketLawyer, LegalZoom, etc.)</span></label>
+                        <label class="radio-option"><input type="radio" name="q15" value="Need to draft (will consult attorney)"><span>Need to draft waiver (will consult attorney)</span></label>
+                        <label class="radio-option"><input type="radio" name="q15" value="Not using a waiver"><span>Not using a waiver</span></label>
+                    </div>
+                    <div class="warning-box" style="margin-top: 15px;">
+                        <strong>Important:</strong> A liability waiver is strongly recommended for any wellness service involving cold water immersion and heat exposure. Consider consulting a local attorney.
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">16. Age Restrictions & Minor Policy</label>
+                    <span class="question-helper">Can minors use the service?</span>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="q16" value="18+ only"><span>18+ only (no minors)</span></label>
+                        <label class="radio-option"><input type="radio" name="q16" value="16+ with parent/guardian consent"><span>16+ with parent/guardian consent</span></label>
+                        <label class="radio-option"><input type="radio" name="q16" value="13+ with parent consent and presence"><span>13+ with parent/guardian consent and presence</span></label>
+                        <label class="radio-option"><input type="radio" name="q16" value="All ages with supervision"><span>All ages welcome with appropriate supervision</span></label>
+                    </div>
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="sub-label">Additional details on minor policy:</label>
+                        <textarea name="q16_details" placeholder="e.g., 'Parent must sign waiver and remain on-site'"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Brand & Marketing -->
+            <div class="section" data-section="5">
+                <div class="section-header">
+                    <h2>Section 5: Brand & Marketing</h2>
+                    <p>Positioning and personal story</p>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">17. Founder Story</label>
+                    <span class="question-helper">Do you want an "About" section with your personal connection to wellness/cold plunge?</span>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="q17" value="Yes - share full story"><span>Yes - I want to share my story</span></label>
+                        <label class="radio-option"><input type="radio" name="q17" value="Yes - keep it brief"><span>Yes - but keep it very brief (1-2 paragraphs)</span></label>
+                        <label class="radio-option"><input type="radio" name="q17" value="No - focus on the service"><span>No - just focus on the service, not personal story</span></label>
+                    </div>
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="sub-label">If yes, tell your story (we'll polish the copy):</label>
+                        <textarea name="q17_story" placeholder="e.g., 'I discovered cold plunge after a running injury...' Feel free to be conversational." style="min-height: 150px;"></textarea>
+                    </div>
+                    <div class="info-box" style="margin-top: 10px;">
+                        <strong>Why it matters:</strong> Founder stories build trust and connection. Even 2-3 sentences about why you started this creates authenticity.
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">18. Brand Personality Emphasis</label>
+                    <span class="question-helper">How should Pink Pony Plunge "feel" to customers? (Select all that apply)</span>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option"><input type="checkbox" name="q18" value="Luxury & Premium"><span>Luxury & Premium - High-end spa vibes</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q18" value="Approachable & Fun"><span>Approachable & Fun - Friendly, not intimidating</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q18" value="Wellness-Focused"><span>Wellness-Focused - Health benefits and science</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q18" value="Performance & Recovery"><span>Performance & Recovery - Athlete-focused</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q18" value="Experiential & Instagram-Worthy"><span>Experiential & Instagram-Worthy - Cool factor</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q18" value="Local & Community-Oriented"><span>Local & Community-Oriented - Neighborly</span></label>
+                    </div>
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="sub-label">Any other brand personality notes?</label>
+                        <textarea name="q18_notes" placeholder="e.g., 'Premium but not pretentious' or 'Science-backed but still fun'"></textarea>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">19. Content Marketing Plans</label>
+                    <span class="question-helper">Blog posts about cold plunge benefits, how-to guides, etc.</span>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="q19" value="Yes - start blog at launch"><span>Yes - start blog content at launch (SEO strategy)</span></label>
+                        <label class="radio-option"><input type="radio" name="q19" value="Yes - wait until Month 2-3"><span>Yes - but wait until Month 2-3 after launch</span></label>
+                        <label class="radio-option"><input type="radio" name="q19" value="Maybe - evaluate after initial traffic"><span>Maybe - evaluate after seeing initial traffic</span></label>
+                        <label class="radio-option"><input type="radio" name="q19" value="No - social media only"><span>No - social media only, no blog</span></label>
+                    </div>
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="sub-label">If yes, what topics interest you?</label>
+                        <textarea name="q19_topics" placeholder="e.g., 'Cold plunge benefits for runners', 'Contrast therapy explained'"></textarea>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">20. Peak Season Pricing</label>
+                    <span class="question-helper">Will you adjust pricing seasonally?</span>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="q20" value="Same pricing year-round"><span>Same pricing year-round</span></label>
+                        <label class="radio-option"><input type="radio" name="q20" value="Seasonal pricing"><span>Seasonal pricing (higher in peak months)</span></label>
+                        <label class="radio-option"><input type="radio" name="q20" value="Premium pricing for major events"><span>Premium pricing for major events (TIEC, weddings)</span></label>
+                        <label class="radio-option"><input type="radio" name="q20" value="Dynamic pricing based on demand"><span>Dynamic pricing based on demand</span></label>
+                    </div>
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="sub-label">If seasonal/premium, explain structure:</label>
+                        <textarea name="q20_details" placeholder="e.g., 'Summer months (June-Aug) +20%' or 'TIEC event weekends +$10/session'"></textarea>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <label class="question-label">21. Equipment Failure Backup Plan</label>
+                    <span class="question-helper">What happens if the Morozko chiller breaks or sauna malfunctions?</span>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option"><input type="checkbox" name="q21" value="Manufacturer warranty and support"><span>Morozko/Finnmark warranty and support (included)</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q21" value="Extended maintenance contract"><span>Extended maintenance contract with supplier</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q21" value="Backup chiller unit"><span>Backup chiller unit (for critical failures)</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q21" value="Reschedule with credit/discount"><span>Reschedule affected bookings with credit/discount</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="q21" value="Full refund for equipment failures"><span>Full refund for any equipment failures</span></label>
+                    </div>
+                    <div class="input-group" style="margin-top: 15px;">
+                        <label class="sub-label">Additional backup plan details:</label>
+                        <textarea name="q21_details" placeholder="e.g., 'Have local HVAC tech on-call' or 'Keep spare parts inventory'"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary / Review -->
+            <div class="summary" id="summarySection">
+                <div class="section-header">
+                    <h2>Review Your Answers</h2>
+                    <p>Please review before downloading</p>
+                </div>
+                <div id="summaryContent"></div>
+            </div>
+
+            <!-- Success -->
+            <div class="success-message" id="successMessage">
+                <div class="icon">&#127881;</div>
+                <h2>Survey Complete!</h2>
+                <p>Your responses have been downloaded. Please drop the file into the shared Google Drive folder so the team can review.</p>
+                <div class="download-btns">
+                    <button class="btn-primary" onclick="downloadMD()">Download .md Again</button>
+                    <button class="btn-ice" onclick="downloadCSV()">Download as .csv</button>
+                </div>
+                <p style="margin-top: 20px; color: #6C757D; font-size: 0.9rem;">Next steps: We'll review your answers and follow up within 24-48 hours.</p>
+            </div>
+
+            <!-- Navigation -->
+            <div class="buttons" id="navButtons">
+                <button type="button" class="btn-secondary" id="prevBtn" onclick="navigate(-1)" style="display:none;">&#8592; Previous</button>
+                <button type="button" class="btn-primary" id="nextBtn" onclick="navigate(1)">Next &#8594;</button>
+                <button type="button" class="btn-primary" id="submitBtn" onclick="submitSurvey()" style="display:none;">Download Responses</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSection = 0;
+        const totalSections = 6; // 0-5
+
+        // -- Navigation --
+        function navigate(dir) {
+            if (dir > 0) saveCurrentSection();
+
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+
+            currentSection += dir;
+
+            if (currentSection > 5) {
+                showSummary();
+                return;
+            }
+
+            if (currentSection < 0) currentSection = 0;
+
+            const target = document.querySelector(`.section[data-section="${currentSection}"]`);
+            if (target) target.classList.add('active');
+
+            updateNav();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateNav() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const submitBtn = document.getElementById('submitBtn');
+            const label = document.getElementById('progressLabel');
+            const fill = document.getElementById('progressFill');
+            const intro = document.getElementById('introMsg');
+
+            prevBtn.style.display = currentSection === 0 ? 'none' : 'block';
+            nextBtn.style.display = 'block';
+            submitBtn.style.display = 'none';
+
+            intro.style.display = currentSection === 0 ? 'block' : 'none';
+
+            const pct = (currentSection / totalSections) * 100;
+            fill.style.width = pct + '%';
+
+            if (currentSection === 0) {
+                label.textContent = 'Getting Started';
+            } else {
+                label.textContent = `Section ${currentSection} of 5`;
+            }
+        }
+
+        // -- Collect all responses --
+        function getAllResponses() {
+            const data = {};
+            document.querySelectorAll('input, select, textarea').forEach(el => {
+                const name = el.name;
+                if (!name) return;
+
+                if (el.type === 'radio') {
+                    if (el.checked) data[name] = el.value;
+                } else if (el.type === 'checkbox') {
+                    if (!data[name]) data[name] = [];
+                    if (el.checked) data[name].push(el.value);
+                } else {
+                    if (el.value.trim()) data[name] = el.value.trim();
+                }
+            });
+            return data;
+        }
+
+        function saveCurrentSection() {
+            // no-op, we collect everything on submit
+        }
+
+        // -- Summary --
+        function showSummary() {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+
+            const data = getAllResponses();
+            const summary = document.getElementById('summarySection');
+            const content = document.getElementById('summaryContent');
+            const fill = document.getElementById('progressFill');
+            const label = document.getElementById('progressLabel');
+
+            fill.style.width = '100%';
+            label.textContent = 'Review & Download';
+
+            const sections = buildSectionMap();
+            let html = '';
+
+            sections.forEach(sec => {
+                html += `<div class="summary-section"><h3>${sec.title}</h3>`;
+                sec.fields.forEach(f => {
+                    let val = data[f.name];
+                    if (val === undefined || (Array.isArray(val) && val.length === 0)) return;
+                    if (Array.isArray(val)) val = val.join(', ');
+                    if (!val.toString().trim()) return;
+                    html += `<div class="summary-item"><strong>${f.label}</strong><span>${escHTML(val)}</span></div>`;
+                });
+                html += '</div>';
+            });
+
+            content.innerHTML = html;
+            summary.classList.add('active');
+
+            document.getElementById('prevBtn').style.display = 'block';
+            document.getElementById('nextBtn').style.display = 'none';
+            document.getElementById('submitBtn').style.display = 'block';
+        }
+
+        // -- Submit / Download --
+        function submitSurvey() {
+            downloadMD();
+
+            document.getElementById('summarySection').classList.remove('active');
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('navButtons').style.display = 'none';
+            document.getElementById('introMsg').style.display = 'none';
+
+            document.getElementById('progressFill').style.width = '100%';
+            document.getElementById('progressLabel').textContent = 'Complete!';
+        }
+
+        function downloadMD() {
+            const data = getAllResponses();
+            const respondent = data.respondent_name || 'Unknown';
+            const date = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            const sections = buildSectionMap();
+
+            let md = `# Pink Pony Plunge - Follow-Up Survey Responses\n\n`;
+            md += `**Respondent:** ${respondent}\n`;
+            if (data.respondent_role) md += `**Role:** ${data.respondent_role}\n`;
+            md += `**Date:** ${date}\n\n---\n\n`;
+
+            sections.forEach(sec => {
+                md += `## ${sec.title}\n\n`;
+                sec.fields.forEach(f => {
+                    let val = data[f.name];
+                    if (val === undefined || (Array.isArray(val) && val.length === 0)) {
+                        md += `**${f.label}**\n_No answer_\n\n`;
+                        return;
+                    }
+                    if (Array.isArray(val)) val = val.join(', ');
+                    if (!val.toString().trim()) {
+                        md += `**${f.label}**\n_No answer_\n\n`;
+                        return;
+                    }
+                    md += `**${f.label}**\n${val}\n\n`;
+                });
+                md += `---\n\n`;
+            });
+
+            const safeName = respondent.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
+            triggerDownload(md, `PPP_Survey_${safeName}.md`, 'text/markdown');
+        }
+
+        function downloadCSV() {
+            const data = getAllResponses();
+            const sections = buildSectionMap();
+            const rows = [['Question', 'Answer']];
+
+            rows.push(['Respondent Name', data.respondent_name || '']);
+            rows.push(['Role', data.respondent_role || '']);
+
+            sections.forEach(sec => {
+                sec.fields.forEach(f => {
+                    let val = data[f.name];
+                    if (val === undefined) val = '';
+                    if (Array.isArray(val)) val = val.join('; ');
+                    rows.push([f.label, val.toString()]);
+                });
+            });
+
+            const csv = rows.map(r => r.map(c => `"${c.replace(/"/g, '""')}"`).join(',')).join('\n');
+            const safeName = (data.respondent_name || 'unknown').replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
+            triggerDownload(csv, `PPP_Survey_${safeName}.csv`, 'text/csv');
+        }
+
+        function triggerDownload(content, filename, mime) {
+            const blob = new Blob([content], { type: mime });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // -- Helpers --
+        function escHTML(str) {
+            const d = document.createElement('div');
+            d.textContent = str;
+            return d.innerHTML;
+        }
+
+        function buildSectionMap() {
+            return [
+                {
+                    title: 'Confirmations',
+                    fields: [
+                        { name: 'q1', label: 'Domain Name Status' },
+                        { name: 'q1_alt', label: 'Alternative Domain' },
+                        { name: 'q2', label: 'Social Media Handles' },
+                        { name: 'q2_alt', label: 'Alternative Handles' },
+                        { name: 'q3', label: 'Service Radius' },
+                        { name: 'q3_custom', label: 'Custom Radius Details' },
+                        { name: 'q4', label: 'Delivery/Setup Fee Structure' },
+                        { name: 'q4_details', label: 'Fee Details' }
+                    ]
+                },
+                {
+                    title: 'Operational Policies',
+                    fields: [
+                        { name: 'q5', label: 'Deposit Amount' },
+                        { name: 'q5_details', label: 'Deposit Details' },
+                        { name: 'q6', label: 'Cancellation Policy' },
+                        { name: 'q6_details', label: 'Cancellation Details' },
+                        { name: 'q7', label: 'Minimum Booking Notice' },
+                        { name: 'q8', label: 'On-Site Attendant Policy' },
+                        { name: 'q8_details', label: 'Attendant Details' },
+                        { name: 'q9', label: 'Weather Contingency' },
+                        { name: 'q9_refund', label: 'Weather Refund Terms' }
+                    ]
+                },
+                {
+                    title: 'Photography & Content',
+                    fields: [
+                        { name: 'q10', label: 'Professional Photography Status' },
+                        { name: 'q10_details', label: 'Photography Details' },
+                        { name: 'q11', label: 'Photo Categories Needed' },
+                        { name: 'q12', label: 'Video Content Plans' },
+                        { name: 'q12_details', label: 'Video Details' }
+                    ]
+                },
+                {
+                    title: 'Business & Legal',
+                    fields: [
+                        { name: 'q13_name', label: 'Legal Business Name' },
+                        { name: 'q13_type', label: 'Entity Type' },
+                        { name: 'q13_state', label: 'State of Formation' },
+                        { name: 'q14', label: 'Insurance Coverage' },
+                        { name: 'q14_amount', label: 'Coverage Amount' },
+                        { name: 'q15', label: 'Liability Waiver Status' },
+                        { name: 'q16', label: 'Age Restrictions & Minor Policy' },
+                        { name: 'q16_details', label: 'Minor Policy Details' }
+                    ]
+                },
+                {
+                    title: 'Brand & Marketing',
+                    fields: [
+                        { name: 'q17', label: 'Founder Story' },
+                        { name: 'q17_story', label: 'Story Content' },
+                        { name: 'q18', label: 'Brand Personality' },
+                        { name: 'q18_notes', label: 'Brand Notes' },
+                        { name: 'q19', label: 'Content Marketing Plans' },
+                        { name: 'q19_topics', label: 'Blog Topics' },
+                        { name: 'q20', label: 'Peak Season Pricing' },
+                        { name: 'q20_details', label: 'Pricing Details' },
+                        { name: 'q21', label: 'Equipment Failure Backup Plan' },
+                        { name: 'q21_details', label: 'Backup Plan Details' }
+                    ]
+                }
+            ];
+        }
+
+        // -- Interactive styling for radio/checkbox options --
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.radio-option').forEach(opt => {
+                const radio = opt.querySelector('input[type="radio"]');
+                radio.addEventListener('change', function() {
+                    document.querySelectorAll(`input[name="${this.name}"]`).forEach(r => {
+                        r.closest('.radio-option').classList.remove('selected');
+                    });
+                    if (this.checked) opt.classList.add('selected');
+                });
+            });
+
+            document.querySelectorAll('.checkbox-option').forEach(opt => {
+                const cb = opt.querySelector('input[type="checkbox"]');
+                cb.addEventListener('change', function() {
+                    opt.classList.toggle('selected', this.checked);
+                });
+            });
+
+            updateNav();
+        });
+    </script>
+</body>
+</html>
