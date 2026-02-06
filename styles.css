@@ -707,6 +707,191 @@ details p {
 
 .email-signup button:hover { background: var(--sunset-coral); }
 
+/* --- Service Split (Two Paths) --- */
+.service-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 32px;
+  text-align: left;
+}
+
+.service-path {
+  border-radius: 12px;
+  padding: 32px 24px;
+  color: var(--white);
+}
+
+.service-path h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.service-path p {
+  opacity: 0.95;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.service-path ul {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.service-path li {
+  padding: 4px 0 4px 20px;
+  position: relative;
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+.service-path li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.path-fire { background: var(--gradient-warm); box-shadow: var(--shadow-fire); }
+.path-ice { background: var(--gradient-cool); box-shadow: var(--shadow-ice); }
+
+.path-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.25);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+/* --- Rental Cards --- */
+.rental-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.rental-card {
+  background: var(--white);
+  border: 1px solid var(--soft-gray);
+  border-radius: 12px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.rental-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.rental-card.featured {
+  border: 2px solid var(--sky-blue);
+  box-shadow: var(--shadow-ice);
+}
+
+.rental-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+  color: var(--charcoal);
+}
+
+.rental-card .price {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--sky-blue);
+  margin-bottom: 4px;
+}
+
+.rental-card .price-detail {
+  font-size: 0.85rem;
+  color: var(--slate-gray);
+}
+
+.rental-duration {
+  font-size: 0.9rem;
+  color: var(--slate-gray);
+  margin-bottom: 12px;
+}
+
+/* --- Pricing Table (Hourly Rates) --- */
+.pricing-table-wrap {
+  max-width: 600px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.pricing-table thead {
+  background: var(--gradient-hero);
+  color: var(--white);
+}
+
+.pricing-table th {
+  font-weight: 600;
+}
+
+.pricing-table tbody tr {
+  border-bottom: 1px solid var(--soft-gray);
+}
+
+.pricing-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.pricing-table tbody tr:hover {
+  background: var(--ice-crystal);
+}
+
+/* --- Included Box (What's Included) --- */
+.included-box {
+  background: var(--white);
+  border: 2px solid var(--sky-blue);
+  border-radius: 12px;
+  padding: 28px 24px;
+  margin-top: 32px;
+  box-shadow: var(--shadow-ice);
+}
+
+.included-box h4 {
+  font-size: 1.1rem;
+  color: var(--charcoal);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.included-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.included-grid span {
+  font-size: 0.95rem;
+  color: var(--charcoal);
+  padding: 4px 0;
+}
+
 /* ============================================
    RESPONSIVE BREAKPOINTS
    ============================================ */
@@ -729,6 +914,10 @@ details p {
   .usecases-grid { grid-template-columns: repeat(2, 1fr); }
   .benefits-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .service-split { grid-template-columns: 1fr 1fr; }
+  .rental-grid { grid-template-columns: repeat(3, 1fr); }
+  .included-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* Desktop (1024px+) */
@@ -739,4 +928,5 @@ details p {
 
   .pricing-grid { grid-template-columns: repeat(4, 1fr); }
   .usecases-grid { grid-template-columns: repeat(3, 1fr); }
+  .included-grid { grid-template-columns: repeat(3, 1fr); }
 }
