@@ -51,6 +51,8 @@ body {
   background: var(--white);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -64,7 +66,7 @@ a:hover { color: var(--deep-sky); }
   padding: 0 20px;
 }
 
-section { padding: 60px 0; }
+section { padding: 40px 0; }
 
 .section-label {
   text-transform: uppercase;
@@ -83,10 +85,10 @@ section { padding: 60px 0; }
 }
 
 .section-subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--slate-gray);
   max-width: 600px;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
 }
 
 .text-center { text-align: center; }
@@ -247,40 +249,48 @@ section { padding: 60px 0; }
 /* --- Hero --- */
 .hero {
   background: var(--gradient-hero);
-  padding: 80px 0;
+  padding: 56px 0;
   color: var(--white);
   text-align: center;
 }
 
 .hero-logo {
-  width: 140px;
+  width: 110px;
   height: auto;
-  margin: 0 auto 24px;
+  margin: 0 auto 20px;
   border-radius: 12px;
 }
 
 .hero h1 {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 800;
   margin-bottom: 12px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
 }
 
 .hero .tagline {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   opacity: 0.95;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   max-width: 550px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 8px;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 16px;
+}
+
+.hero-buttons .btn {
+  width: 100%;
+  max-width: 300px;
 }
 
 .hero .service-area {
@@ -404,6 +414,7 @@ section { padding: 60px 0; }
 .pricing-card.featured {
   border: 2px solid var(--fire-coral);
   box-shadow: var(--shadow-fire);
+  margin-top: 16px;
 }
 
 .pricing-badge {
@@ -571,16 +582,18 @@ details {
 details[open] { border-color: var(--fire-coral); }
 
 summary {
-  padding: 16px 20px;
+  padding: 14px 16px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   color: var(--charcoal);
   list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
   transition: background var(--transition-fast);
+  min-height: 48px;
 }
 
 summary:hover { background: var(--ice-crystal); }
@@ -600,9 +613,9 @@ details[open] summary::after {
 summary::-webkit-details-marker { display: none; }
 
 details p {
-  padding: 0 20px 16px;
+  padding: 0 16px 14px;
   color: var(--slate-gray);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.7;
 }
 
@@ -669,7 +682,12 @@ details p {
 /* --- Email Signup --- */
 .email-signup {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
+}
+
+.email-signup input {
+  min-width: 0;
 }
 
 .email-signup input {
@@ -752,6 +770,11 @@ details p {
   font-weight: bold;
 }
 
+.service-path .btn {
+  display: block;
+  text-align: center;
+}
+
 .path-fire { background: var(--gradient-warm); box-shadow: var(--shadow-fire); }
 .path-ice { background: var(--gradient-cool); box-shadow: var(--shadow-ice); }
 
@@ -793,6 +816,7 @@ details p {
 .rental-card.featured {
   border: 2px solid var(--sky-blue);
   box-shadow: var(--shadow-ice);
+  margin-top: 16px;
 }
 
 .rental-card h3 {
@@ -837,9 +861,9 @@ details p {
 
 .pricing-table th,
 .pricing-table td {
-  padding: 12px 16px;
+  padding: 10px 12px;
   text-align: left;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .pricing-table thead {
@@ -898,6 +922,7 @@ details p {
 
 /* Tablet (768px+) */
 @media (min-width: 768px) {
+  section { padding: 60px 0; }
   .section-title { font-size: 2.4rem; }
 
   .nav-links { display: flex; }
@@ -906,18 +931,33 @@ details p {
 
   .hero { padding: 100px 0; }
   .hero h1 { font-size: 3rem; }
+  .hero .tagline { font-size: 1.2rem; }
   .hero-logo { width: 160px; }
+  .hero-buttons {
+    flex-direction: row;
+    padding: 0;
+  }
+  .hero-buttons .btn {
+    width: auto;
+    max-width: none;
+  }
 
   .equipment-grid { grid-template-columns: 1fr 1fr; }
   .steps-grid { grid-template-columns: repeat(3, 1fr); }
   .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-card.featured { margin-top: 0; }
   .usecases-grid { grid-template-columns: repeat(2, 1fr); }
   .benefits-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: repeat(3, 1fr); }
 
   .service-split { grid-template-columns: 1fr 1fr; }
+  .service-path .btn { display: inline-block; }
   .rental-grid { grid-template-columns: repeat(3, 1fr); }
+  .rental-card.featured { margin-top: 0; }
   .included-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .pricing-table th,
+  .pricing-table td { padding: 12px 16px; font-size: 0.95rem; }
 }
 
 /* Desktop (1024px+) */
