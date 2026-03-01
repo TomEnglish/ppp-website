@@ -1,548 +1,628 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pink Pony Plunge | Mobile Sauna & Cold Plunge | Upstate SC</title>
-    <meta name="description" content="Premium mobile sauna and cold plunge experiences. Drop in at a local partner location or rent the full trailer for your event. Serving Upstate SC.">
+    <meta name="description"
+        content="Premium mobile sauna and cold plunge experiences. Drop in at a local partner location or rent the full trailer for your event. Serving Upstate SC.">
     <meta property="og:title" content="Pink Pony Plunge | Mobile Sauna & Cold Plunge">
-    <meta property="og:description" content="Drop-in sessions or full event rentals. Premium contrast therapy in Upstate SC.">
+    <meta property="og:description"
+        content="Drop-in sessions or full event rentals. Premium contrast therapy in Upstate SC.">
     <meta property="og:type" content="website">
     <link rel="icon" href="assets/favicon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=3">
 </head>
+
 <body>
 
-<!-- ========== NAVIGATION ========== -->
-<nav class="navbar">
-    <div class="container">
-        <a href="#" class="nav-logo">
-            <img src="assets/logo-icon.png" alt="Pink Pony Plunge icon logo" width="40" height="40">
-            <span>Pink Pony Plunge</span>
-        </a>
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo">
+                <img src="assets/logo-cleaned.png" alt="Pink Pony Plunge logo"
+                    style="height: 96px; width: auto; margin-top: 4px;">
+            </a>
 
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#equipment">Equipment</a></li>
-            <li><a href="#drop-in">Drop-In</a></li>
-            <li><a href="#rentals">Event Rentals</a></li>
-            <li><a href="#faq">FAQ</a></li>
-        </ul>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#equipment">Equipment</a></li>
+                <li><a href="#drop-in">Drop-In</a></li>
+                <li><a href="#rentals">Event Rentals</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
 
-        <a href="mailto:info@pinkponyplunge.com?subject=Booking%20Inquiry" class="btn btn-fire btn-sm nav-cta">Book Now</a>
+            <a href="mailto:info@pinkponyplunge.com?subject=Booking%20Inquiry" class="btn btn-fire btn-sm nav-cta">Book
+                Now</a>
 
-        <button class="hamburger" id="hamburger" aria-label="Open menu">
-            <span></span><span></span><span></span>
-        </button>
-    </div>
-
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#services">Services</a>
-        <a href="#equipment">Equipment</a>
-        <a href="#drop-in">Drop-In Sessions</a>
-        <a href="#rentals">Event Rentals</a>
-        <a href="#benefits">Benefits</a>
-        <a href="#faq">FAQ</a>
-        <a href="mailto:info@pinkponyplunge.com?subject=Booking%20Inquiry" style="color: #E86263; font-weight: 700;">Book Now</a>
-    </div>
-</nav>
-
-<!-- ========== HERO ========== -->
-<section class="hero">
-    <div class="container">
-        <img src="assets/logo-full.png" alt="Pink Pony Plunge complete logo" class="hero-logo">
-        <h1>Premium Mobile Sauna<br>& Cold Plunge</h1>
-        <p class="tagline">Contrast therapy on your terms. Drop in for a session at a partner location, or rent the full trailer experience for your next event.</p>
-        <div class="hero-buttons">
-            <a href="#drop-in" class="btn btn-fire">Book a Session</a>
-            <a href="#rentals" class="btn btn-outline" style="border-color: #fff; color: #fff;">Rent for Your Event</a>
-        </div>
-        <p class="service-area">Serving Campobello, Spartanburg, Greenville & surrounding areas</p>
-    </div>
-</section>
-
-<!-- ========== TWO PATHS (Service Split) ========== -->
-<section id="services">
-    <div class="container text-center">
-        <p class="section-label">Two Ways to Plunge</p>
-        <h2 class="section-title">Choose Your Experience</h2>
-        <p class="section-subtitle">Whether you come to us or we come to you, the experience is world-class.</p>
-
-        <div class="service-split">
-            <div class="service-path path-fire">
-                <div class="path-badge">Come to Us</div>
-                <h3>Drop-In Sessions</h3>
-                <p>Visit one of our partner locations &mdash; gyms, CrossFit boxes, and wellness centers across Upstate SC. Book a time slot, show up, and plunge.</p>
-                <ul>
-                    <li>Cold plunge $20 &bull; Sauna $25</li>
-                    <li>Contrast combo $40</li>
-                    <li>15&ndash;45 minute sessions</li>
-                    <li>Unlimited monthly $175</li>
-                </ul>
-                <a href="#drop-in" class="btn btn-fire">View Sessions & Pricing</a>
-            </div>
-
-            <div class="service-path path-ice">
-                <div class="path-badge">We Come to You</div>
-                <h3>Event Rentals</h3>
-                <p>We deliver the full trailer experience to your location. Perfect for parties, corporate events, weddings, and athletic recovery.</p>
-                <ul>
-                    <li>Parties, fitness events &amp; corporate</li>
-                    <li>Delivery, setup &amp; breakdown included</li>
-                    <li>50-mile service radius</li>
-                    <li>Starting at $400</li>
-                </ul>
-                <a href="#rentals" class="btn btn-ice">View Packages & Get a Quote</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ========== WHAT WE BRING ========== -->
-<section id="equipment" style="background: var(--ice-crystal);">
-    <div class="container text-center">
-        <p class="section-label">What We Bring</p>
-        <h2 class="section-title">World-Class Equipment</h2>
-        <p class="section-subtitle">Premium recovery gear at every location and every event.</p>
-
-        <div class="equipment-grid">
-            <div class="equipment-card fire">
-                <h3>Clearlight Sanctuary Professional C</h3>
-                <p class="card-subtitle">4-Person Full Spectrum Infrared Sauna</p>
-                <ul>
-                    <li>Reaches up to 170&deg;F full spectrum infrared heat</li>
-                    <li>96 LED chromotherapy lights, 12 colors</li>
-                    <li>Bluetooth/AUX audio system</li>
-                    <li>Smart device control &amp; remote preheat</li>
-                    <li>Italian-inspired glass roof design</li>
-                    <li>Low EMF/Low ELF heaters</li>
-                    <li>5-year commercial warranty</li>
-                </ul>
-            </div>
-
-            <div class="equipment-card ice">
-                <h3>Morozko MIB72</h3>
-                <p class="card-subtitle">2-Person Cold Plunge</p>
-                <ul>
-                    <li>Temperature range: 32&deg;F &ndash; 68&deg;F</li>
-                    <li>Typically set to 38&ndash;42&deg;F for contrast therapy</li>
-                    <li>304 Stainless Steel tub, Incense Cedar frame</li>
-                    <li>Ozone disinfection water treatment</li>
-                    <li>15-minute water turnover filtration</li>
-                    <li>Operates in 15&deg;F to 120&deg;F ambient temps</li>
-                    <li>Standard 120V outlet &mdash; no special wiring</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ========== DROP-IN SESSIONS ========== -->
-<section id="drop-in">
-    <div class="container">
-        <div class="text-center">
-            <p class="section-label">Drop-In Sessions</p>
-            <h2 class="section-title">Come to Us</h2>
-            <p class="section-subtitle">Visit a partner location, book a slot, and plunge. Self-service and simple.</p>
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
 
-        <!-- How It Works: Drop-In -->
-        <div class="steps-grid" style="margin-bottom: 48px;">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Select a Location</h3>
-                <p>Choose from our partner gyms, CrossFit boxes, and wellness centers across the Upstate SC region.</p>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#services">Services</a>
+            <a href="#equipment">Equipment</a>
+            <a href="#drop-in">Drop-In Sessions</a>
+            <a href="#rentals">Event Rentals</a>
+            <a href="#benefits">Benefits</a>
+            <a href="#faq">FAQ</a>
+            <a href="mailto:info@pinkponyplunge.com?subject=Booking%20Inquiry"
+                style="color: #E86263; font-weight: 700;">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-ribbon">
+                <img src="assets/logo-cleaned.png" alt="Pink Pony Plunge complete logo" class="hero-logo">
             </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Choose Date & Time</h3>
-                <p>Pick an available slot and pay online. Cold plunge (15 min), sauna (30 min), or contrast combo (45 min).</p>
+            <h1>Premium Mobile Sauna<br>& Cold Plunge</h1>
+            <p class="tagline">Contrast therapy on your terms. Drop in for a session at a partner location, or rent the
+                full trailer experience for your next event.</p>
+            <div class="hero-buttons">
+                <a href="#drop-in" class="btn btn-fire">Book a Session</a>
+                <a href="#rentals" class="btn btn-outline" style="border-color: #fff; color: #fff;">Rent for Your
+                    Event</a>
             </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Show Up & Plunge</h3>
-                <p>Arrive at your scheduled time. Everything is ready &mdash; just bring yourself.</p>
+            <p class="service-area">Serving Campobello, Spartanburg, Greenville & surrounding areas</p>
+        </div>
+    </section>
+
+    <!-- ========== TWO PATHS (Service Split) ========== -->
+    <section id="services">
+        <div class="container text-center">
+            <p class="section-label">Two Ways to Plunge</p>
+            <h2 class="section-title">Choose Your Experience</h2>
+            <p class="section-subtitle">Whether you come to us or we come to you, the experience is world-class.</p>
+
+            <div class="service-split">
+                <div class="service-path path-fire">
+                    <div class="path-badge">Come to Us</div>
+                    <h3>Drop-In Sessions</h3>
+                    <p>Visit one of our partner locations &mdash; gyms, CrossFit boxes, and wellness centers across
+                        Upstate SC. Book a time slot, show up, and plunge.</p>
+                    <ul>
+                        <li>Cold plunge $20 &bull; Sauna $25</li>
+                        <li>Contrast combo $40</li>
+                        <li>15&ndash;45 minute sessions</li>
+                        <li>Unlimited monthly $175</li>
+                    </ul>
+                    <a href="#drop-in" class="btn btn-fire">View Sessions & Pricing</a>
+                </div>
+
+                <div class="service-path path-ice">
+                    <div class="path-badge">We Come to You</div>
+                    <h3>Event Rentals</h3>
+                    <p>We deliver the full trailer experience to your location. Perfect for parties, corporate events,
+                        weddings, and athletic recovery.</p>
+                    <ul>
+                        <li>Parties, fitness events &amp; corporate</li>
+                        <li>Delivery, setup &amp; breakdown included</li>
+                        <li>50-mile service radius</li>
+                        <li>Starting at $400</li>
+                    </ul>
+                    <a href="#rentals" class="btn btn-ice">View Packages & Get a Quote</a>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Drop-In Pricing -->
-        <div class="text-center">
-            <h3 style="font-size: 1.3rem; margin-bottom: 24px; color: var(--charcoal);">Session Pricing</h3>
-        </div>
+    <!-- ========== WHAT WE BRING ========== -->
+    <section id="equipment" style="background: var(--ice-crystal);">
+        <div class="container text-center">
+            <p class="section-label">What We Bring</p>
+            <h2 class="section-title">World-Class Equipment</h2>
+            <p class="section-subtitle">Premium recovery gear at every location and every event.</p>
 
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Cold Plunge</h3>
-                <div class="price">$20</div>
-                <p class="price-detail">15 minutes</p>
-            </div>
-            <div class="pricing-card">
-                <h3>Sauna Session</h3>
-                <div class="price">$25</div>
-                <p class="price-detail">30 minutes</p>
-            </div>
-            <div class="pricing-card featured">
-                <span class="pricing-badge">Best Value</span>
-                <h3>Contrast Combo</h3>
-                <div class="price">$40</div>
-                <p class="price-detail">45 minutes &mdash; sauna + plunge</p>
-                <span class="savings">Save $5 vs separate</span>
-            </div>
-            <div class="pricing-card">
-                <h3>Unlimited Monthly</h3>
-                <div class="price">$175</div>
-                <p class="price-detail">per month &mdash; all services</p>
-                <span class="savings">Best for regulars</span>
-            </div>
-        </div>
+            <div class="equipment-grid">
+                <div class="equipment-card fire">
+                    <h3>Clearlight Sanctuary Professional C</h3>
+                    <p class="card-subtitle">4-Person Full Spectrum Infrared Sauna</p>
+                    <ul>
+                        <li>Reaches up to 170&deg;F full spectrum infrared heat</li>
+                        <li>96 LED chromotherapy lights, 12 colors</li>
+                        <li>Bluetooth/AUX audio system</li>
+                        <li>Smart device control &amp; remote preheat</li>
+                        <li>Italian-inspired glass roof design</li>
+                        <li>Low EMF/Low ELF heaters</li>
+                        <li>5-year commercial warranty</li>
+                    </ul>
+                </div>
 
-        <p style="text-align: center; margin-top: 16px; color: var(--slate-gray); font-size: 0.9rem;">
-            Towel rental available for $5. Self-service with automated smart lock access.
-        </p>
-
-        <div class="text-center" style="margin-top: 32px;">
-            <a href="mailto:info@pinkponyplunge.com?subject=Book%20a%20Drop-In%20Session" class="btn btn-fire">Book a Session</a>
-        </div>
-    </div>
-</section>
-
-<!-- ========== EVENT RENTALS ========== -->
-<section id="rentals" style="background: var(--ice-crystal);">
-    <div class="container">
-        <div class="text-center">
-            <p class="section-label">Event Rentals</p>
-            <h2 class="section-title">We Come to You</h2>
-            <p class="section-subtitle">The full mobile trailer experience, delivered to your location. 50-mile radius from Campobello, SC.</p>
-        </div>
-
-        <!-- How It Works: Rentals -->
-        <div class="steps-grid" style="margin-bottom: 48px;">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Submit Your Event Details</h3>
-                <p>Tell us about your event &mdash; date, location, group size, and any special requests. We&rsquo;ll send a custom quote.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>We Deliver & Set Up</h3>
-                <p>Our trailer arrives fully equipped. We handle all setup and give you a full orientation. Just provide a level surface.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>You Enjoy, We Pick Up</h3>
-                <p>Self-service with smart lock access. When you&rsquo;re done, we handle breakdown and pickup.</p>
+                <div class="equipment-card ice">
+                    <h3>Morozko MIB72</h3>
+                    <p class="card-subtitle">2-Person Cold Plunge</p>
+                    <ul>
+                        <li>Temperature range: 32&deg;F &ndash; 68&deg;F</li>
+                        <li>Typically set to 38&ndash;42&deg;F for contrast therapy</li>
+                        <li>304 Stainless Steel tub, Incense Cedar frame</li>
+                        <li>Ozone disinfection water treatment</li>
+                        <li>15-minute water turnover filtration</li>
+                        <li>Operates in 15&deg;F to 120&deg;F ambient temps</li>
+                        <li>Standard 120V outlet &mdash; no special wiring</li>
+                    </ul>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Event Packages -->
-        <div class="text-center">
-            <h3 style="font-size: 1.3rem; margin-bottom: 24px; color: var(--charcoal);">Event Packages</h3>
-        </div>
+    <!-- ========== DROP-IN SESSIONS ========== -->
+    <section id="drop-in">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">Drop-In Sessions</p>
+                <h2 class="section-title">Come to Us</h2>
+                <p class="section-subtitle">Visit a partner location, book a slot, and plunge. Self-service and simple.
+                </p>
+            </div>
 
-        <div class="rental-grid">
-            <div class="rental-card">
-                <h3>Private Party</h3>
-                <p class="rental-duration">4 hours &bull; up to 8 guests</p>
-                <div class="price">$400</div>
-                <p class="price-detail">Exclusive access for celebrations</p>
+            <!-- How It Works: Drop-In -->
+            <div class="steps-grid" style="margin-bottom: 48px;">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Select a Location</h3>
+                    <p>Choose from our partner gyms, CrossFit boxes, and wellness centers across the Upstate SC region.
+                    </p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Choose Date & Time</h3>
+                    <p>Pick an available slot and pay online. Cold plunge (15 min), sauna (30 min), or contrast combo
+                        (45 min).</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Show Up & Plunge</h3>
+                    <p>Arrive at your scheduled time. Everything is ready &mdash; just bring yourself.</p>
+                </div>
             </div>
-            <div class="rental-card">
-                <h3>Fitness Event</h3>
-                <p class="rental-duration">6 hours</p>
-                <div class="price">$800</div>
-                <p class="price-detail">Race &amp; competition recovery support</p>
-            </div>
-            <div class="rental-card featured">
-                <span class="pricing-badge">Full Experience</span>
-                <h3>Corporate Wellness</h3>
-                <p class="rental-duration">Full day (8 hours)</p>
-                <div class="price">$1,200</div>
-                <p class="price-detail">Team building &amp; wellness programs</p>
-            </div>
-        </div>
 
-        <p style="text-align: center; margin-top: 16px; color: var(--slate-gray); font-size: 0.9rem;">
-            Custom packages available. 50% deposit to secure your date. Free delivery within 20 miles.
-        </p>
-
-        <!-- What's Included -->
-        <div class="included-box">
-            <h4>What&rsquo;s Included in Every Rental</h4>
-            <div class="included-grid">
-                <span>&#10003; Delivery &amp; setup</span>
-                <span>&#10003; 4-person infrared sauna</span>
-                <span>&#10003; 2-person cold plunge</span>
-                <span>&#10003; Equipment orientation</span>
-                <span>&#10003; Breakdown &amp; pickup</span>
-                <span>&#10003; Smart lock access</span>
+            <!-- Drop-In Pricing -->
+            <div class="text-center">
+                <h3 style="font-size: 1.3rem; margin-bottom: 24px; color: var(--charcoal);">Session Pricing</h3>
             </div>
-            <p style="margin-top: 12px; font-size: 0.9rem; color: var(--slate-gray);">
-                <strong>Add-ons:</strong> On-site attendant (included for corporate &amp; weddings) &bull; Extended hours &bull; Towel rental ($5)
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Cold Plunge</h3>
+                    <div class="price">$20</div>
+                    <p class="price-detail">15 minutes</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>Sauna Session</h3>
+                    <div class="price">$25</div>
+                    <p class="price-detail">30 minutes</p>
+                </div>
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Best Value</span>
+                    <h3>Contrast Combo</h3>
+                    <div class="price">$40</div>
+                    <p class="price-detail">45 minutes &mdash; sauna + plunge</p>
+                    <span class="savings">Save $5 vs separate</span>
+                </div>
+                <div class="pricing-card">
+                    <h3>Unlimited Monthly</h3>
+                    <div class="price">$175</div>
+                    <p class="price-detail">per month &mdash; all services</p>
+                    <span class="savings">Best for regulars</span>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 16px; color: var(--slate-gray); font-size: 0.9rem;">
+                Towel rental available for $5. Self-service with automated smart lock access.
             </p>
-        </div>
 
-        <!-- Use Cases -->
-        <div class="text-center" style="margin-top: 40px;">
-            <h3 style="font-size: 1.3rem; margin-bottom: 24px; color: var(--charcoal);">Perfect For</h3>
-        </div>
-
-        <div class="usecases-grid">
-            <div class="usecase-card">
-                <div class="usecase-icon">&#127881;</div>
-                <h3>Private Parties</h3>
-                <p>Birthdays, get-togethers, and backyard events your guests won&rsquo;t forget.</p>
-            </div>
-            <div class="usecase-card">
-                <div class="usecase-icon">&#127970;</div>
-                <h3>Corporate Wellness</h3>
-                <p>Boost team morale. Attendant included for a fully managed experience.</p>
-            </div>
-            <div class="usecase-card">
-                <div class="usecase-icon">&#128141;</div>
-                <h3>Wedding Weekends</h3>
-                <p>Rehearsal recovery, groomsmen bonding, post-wedding wind-down. Attendant included.</p>
-            </div>
-            <div class="usecase-card">
-                <div class="usecase-icon">&#127947;</div>
-                <h3>Athletic Recovery</h3>
-                <p>Reduce inflammation and accelerate recovery for your team or training group.</p>
-            </div>
-            <div class="usecase-card">
-                <div class="usecase-icon">&#129495;</div>
-                <h3>Retreat Centers</h3>
-                <p>Add a premium wellness offering to your retreat or special event.</p>
+            <div class="text-center" style="margin-top: 32px;">
+                <a href="mailto:info@pinkponyplunge.com?subject=Book%20a%20Drop-In%20Session" class="btn btn-fire">Book
+                    a Session</a>
             </div>
         </div>
+    </section>
 
-        <div class="text-center" style="margin-top: 32px;">
-            <a href="mailto:info@pinkponyplunge.com?subject=Event%20Rental%20Inquiry" class="btn btn-ice">Get a Quote</a>
-        </div>
-    </div>
-</section>
+    <!-- ========== EVENT RENTALS ========== -->
+    <section id="rentals" style="background: var(--ice-crystal);">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">Event Rentals</p>
+                <h2 class="section-title">We Come to You</h2>
+                <p class="section-subtitle">The full mobile trailer experience, delivered to your location. 50-mile
+                    radius from Campobello, SC.</p>
+            </div>
 
-<!-- ========== BENEFITS ========== -->
-<section id="benefits">
-    <div class="container text-center">
-        <p class="section-label">The Science</p>
-        <h2 class="section-title">Why Contrast Therapy Works</h2>
-        <p class="section-subtitle">Backed by research. Felt immediately.</p>
-
-        <div class="benefits-grid" style="text-align: left;">
-            <div class="benefit-item">
-                <div class="benefit-icon cool">&#10052;</div>
-                <div>
-                    <h3>Reduce Inflammation</h3>
-                    <p>Cold exposure constricts blood vessels and reduces swelling, helping your body recover from workouts and injury.</p>
+            <!-- How It Works: Rentals -->
+            <div class="steps-grid" style="margin-bottom: 48px;">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Submit Your Event Details</h3>
+                    <p>Tell us about your event &mdash; date, location, group size, and any special requests.
+                        We&rsquo;ll send a custom quote.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Deliver & Set Up</h3>
+                    <p>Our trailer arrives fully equipped. We handle all setup and give you a full orientation. Just
+                        provide a level surface.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>You Enjoy, We Pick Up</h3>
+                    <p>Self-service with smart lock access. When you&rsquo;re done, we handle breakdown and pickup.</p>
                 </div>
             </div>
-            <div class="benefit-item">
-                <div class="benefit-icon warm">&#9889;</div>
-                <div>
-                    <h3>Accelerate Recovery</h3>
-                    <p>Alternating hot and cold promotes blood flow and nutrient delivery to muscles, cutting recovery time significantly.</p>
+
+            <!-- Event Packages -->
+            <div class="text-center">
+                <h3 style="font-size: 1.3rem; margin-bottom: 24px; color: var(--charcoal);">Event Packages</h3>
+            </div>
+
+            <div class="rental-grid">
+                <div class="rental-card">
+                    <h3>Private Party</h3>
+                    <p class="rental-duration">4 hours &bull; up to 8 guests</p>
+                    <div class="price">$400</div>
+                    <p class="price-detail">Exclusive access for celebrations</p>
+                </div>
+                <div class="rental-card">
+                    <h3>Fitness Event</h3>
+                    <p class="rental-duration">6 hours</p>
+                    <div class="price">$800</div>
+                    <p class="price-detail">Race &amp; competition recovery support</p>
+                </div>
+                <div class="rental-card featured">
+                    <span class="pricing-badge">Full Experience</span>
+                    <h3>Corporate Wellness</h3>
+                    <p class="rental-duration">Full day (8 hours)</p>
+                    <div class="price">$1,200</div>
+                    <p class="price-detail">Team building &amp; wellness programs</p>
                 </div>
             </div>
-            <div class="benefit-item">
-                <div class="benefit-icon cool">&#128161;</div>
-                <div>
-                    <h3>Mental Clarity & Focus</h3>
-                    <p>Cold plunge triggers a norepinephrine surge &mdash; sharpening focus, elevating mood, and building mental resilience.</p>
+
+            <p style="text-align: center; margin-top: 16px; color: var(--slate-gray); font-size: 0.9rem;">
+                Custom packages available. 50% deposit to secure your date. Free delivery within 20 miles.
+            </p>
+
+            <!-- What's Included -->
+            <div class="included-box">
+                <h4>What&rsquo;s Included in Every Rental</h4>
+                <div class="included-grid">
+                    <span>&#10003; Delivery &amp; setup</span>
+                    <span>&#10003; 4-person infrared sauna</span>
+                    <span>&#10003; 2-person cold plunge</span>
+                    <span>&#10003; Equipment orientation</span>
+                    <span>&#10003; Breakdown &amp; pickup</span>
+                    <span>&#10003; Smart lock access</span>
                 </div>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-icon warm">&#10084;</div>
-                <div>
-                    <h3>Enhanced Circulation</h3>
-                    <p>The hot-cold cycle acts as a vascular workout, strengthening blood vessels and improving cardiovascular health.</p>
-                </div>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-icon cool">&#127807;</div>
-                <div>
-                    <h3>Stress Reduction</h3>
-                    <p>Infrared heat relaxes the nervous system while cold exposure builds stress resilience through hormetic response.</p>
-                </div>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-icon warm">&#128170;</div>
-                <div>
-                    <h3>Immune System Support</h3>
-                    <p>Regular contrast therapy has been shown to increase white blood cell count and strengthen immune function.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ========== FAQ ========== -->
-<section id="faq" class="faq-section">
-    <div class="container">
-        <div class="text-center">
-            <p class="section-label">FAQ</p>
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <p class="section-subtitle">Everything you need to know before booking.</p>
-        </div>
-
-        <div class="faq-list">
-            <!-- General -->
-            <div class="faq-category">
-                <h3 class="faq-category-title">General</h3>
-
-                <details>
-                    <summary>What is contrast therapy?</summary>
-                    <p>Contrast therapy alternates between hot (sauna) and cold (plunge) exposure. This hot-cold cycling boosts circulation, reduces inflammation, speeds recovery, and delivers a powerful mood and energy boost.</p>
-                </details>
-                <details>
-                    <summary>What temperature is the cold plunge?</summary>
-                    <p>The Morozko maintains water between 32&deg;F and 68&deg;F. We typically set it to 38&ndash;42&deg;F for optimal contrast therapy.</p>
-                </details>
-                <details>
-                    <summary>What temperature does the sauna reach?</summary>
-                    <p>The Clearlight infrared sauna reaches up to 170&deg;F with full spectrum infrared heat.</p>
-                </details>
-                <details>
-                    <summary>Is cold plunge therapy safe?</summary>
-                    <p>Cold plunge therapy is generally safe for healthy adults. However, we recommend consulting your physician before use, especially if you have heart conditions, are pregnant, or have other health concerns. All users must sign a liability waiver.</p>
-                </details>
-                <details>
-                    <summary>What's the minimum age?</summary>
-                    <p>Users must be 16 or older. Minors require parent/guardian consent.</p>
-                </details>
-            </div>
-
-            <!-- Drop-In Sessions -->
-            <div class="faq-category">
-                <h3 class="faq-category-title">Drop-In Sessions</h3>
-
-                <details>
-                    <summary>Where are your locations?</summary>
-                    <p>We operate at partner locations including gyms, CrossFit boxes, and wellness centers across the Upstate SC region. Check back for current sites and hours.</p>
-                </details>
-                <details>
-                    <summary>How do I book a drop-in session?</summary>
-                    <p>Select your location, choose an available time slot, and pay online. Just show up at your scheduled time &mdash; no equipment to bring, we have everything ready.</p>
-                </details>
-                <details>
-                    <summary>What's included in a drop-in session?</summary>
-                    <p>Choose from cold plunge ($20/15 min), sauna ($25/30 min), or contrast combo ($40/45 min). Sessions are self-service with automated smart lock access. Towel rental available for $5.</p>
-                </details>
-                <details>
-                    <summary>Can I bring a friend?</summary>
-                    <p>Yes! The sauna fits 4 and the plunge fits 2. Book additional spots for your group.</p>
-                </details>
-                <details>
-                    <summary>How long is a session?</summary>
-                    <p>Cold plunge sessions are 15 minutes, sauna sessions are 30 minutes, and contrast combo sessions (sauna + plunge) are 45 minutes.</p>
-                </details>
-                <details>
-                    <summary>Do you offer memberships?</summary>
-                    <p>Yes! Our Unlimited Monthly membership ($175/month) gives you unlimited access to all services &mdash; the best value for regular plungers.</p>
-                </details>
-            </div>
-
-            <!-- Event Rentals -->
-            <div class="faq-category">
-                <h3 class="faq-category-title">Event Rentals</h3>
-
-                <details>
-                    <summary>What area do you serve for event rentals?</summary>
-                    <p>We deliver within a 50-mile radius of Campobello, SC, including Tryon, Landrum, Spartanburg, Greenville, and surrounding areas.</p>
-                </details>
-                <details>
-                    <summary>Is there a delivery fee?</summary>
-                    <p>Delivery is free within 20 miles of Campobello. Beyond that, fees are tiered by distance.</p>
-                </details>
-                <details>
-                    <summary>How much space do I need?</summary>
-                    <p>You&rsquo;ll need a level surface that can accommodate our 8.5&rsquo; &times; 20&rsquo; trailer, plus room for safe access and setup.</p>
-                </details>
-                <details>
-                    <summary>Do I need a water hookup?</summary>
-                    <p>A standard garden hose connection is needed for the initial fill. We handle the rest.</p>
-                </details>
-                <details>
-                    <summary>What about electrical?</summary>
-                    <p>We require access to a 30A RV outlet or can discuss generator options. We&rsquo;ll confirm requirements during booking.</p>
-                </details>
-                <details>
-                    <summary>How many people can use the equipment?</summary>
-                    <p>The sauna comfortably fits 4 people; the cold plunge accommodates 2 at a time. For larger events, guests rotate through.</p>
-                </details>
-                <details>
-                    <summary>How far in advance should I book?</summary>
-                    <p>We require a minimum of 3 days notice. For weekends, weddings, and events, we recommend booking 2&ndash;4 weeks ahead.</p>
-                </details>
-                <details>
-                    <summary>What's your deposit policy?</summary>
-                    <p>We require a 50% deposit to secure your date, with the balance due before your event.</p>
-                </details>
-                <details>
-                    <summary>What's your cancellation policy?</summary>
-                    <p>Cancel with 7 days notice for a full refund. We also offer full refunds for weather-related cancellations &mdash; we always err on the side of the customer.</p>
-                </details>
-                <details>
-                    <summary>Do you stay on-site during the rental?</summary>
-                    <p>Standard rentals are self-service after we set up and orient you. An on-site attendant is available as a paid add-on, and is included for corporate events and weddings.</p>
-                </details>
-                <details>
-                    <summary>What about bad weather?</summary>
-                    <p>You can cancel for weather with a full refund. We&rsquo;ll work with you to reschedule if possible.</p>
-                </details>
-                <details>
-                    <summary>What's included in an event rental?</summary>
-                    <p>Delivery, setup, the full 4-person sauna + 2-person cold plunge experience, equipment orientation, and breakdown/pickup. See our packages for details.</p>
-                </details>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ========== FOOTER ========== -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div>
-                <h4>Pink Pony Plunge</h4>
-                <p>Premium mobile sauna &amp; cold plunge experiences. Drop-in sessions and event rentals across Upstate SC.</p>
-                <p style="margin-top: 12px;">
-                    <a href="mailto:info@pinkponyplunge.com">info@pinkponyplunge.com</a>
-                </p>
-                <p>Campobello, SC</p>
-            </div>
-
-            <div>
-                <h4>Quick Links</h4>
-                <p>
-                    <a href="#services">Services</a><br>
-                    <a href="#equipment">Equipment</a><br>
-                    <a href="#drop-in">Drop-In Sessions</a><br>
-                    <a href="#rentals">Event Rentals</a><br>
-                    <a href="#faq">FAQ</a>
+                <p style="margin-top: 12px; font-size: 0.9rem; color: var(--slate-gray);">
+                    <strong>Add-ons:</strong> On-site attendant (included for corporate &amp; weddings) &bull; Extended
+                    hours &bull; Towel rental ($5)
                 </p>
             </div>
 
-            <div>
-                <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="https://instagram.com/pinkponyplunge" target="_blank" rel="noopener">Instagram</a>
-                    <a href="https://facebook.com/pinkponyplunge" target="_blank" rel="noopener">Facebook</a>
+            <!-- Use Cases -->
+            <div class="text-center" style="margin-top: 40px;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 24px; color: var(--charcoal);">Perfect For</h3>
+            </div>
+
+            <div class="usecases-grid">
+                <div class="usecase-card">
+                    <div class="usecase-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="var(--fire-coral)" style="width: 36px; height: 36px;">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                        </svg>
+                    </div>
+                    <h3>Private Parties</h3>
+                    <p>Birthdays, get-togethers, and backyard events your guests won&rsquo;t forget.</p>
                 </div>
-                <div style="margin-top: 20px;">
-                    <h4>Stay Updated</h4>
-                    <form class="email-signup" onsubmit="event.preventDefault(); alert('Email signup coming soon!');">
-                        <input type="email" placeholder="Your email" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
+                <div class="usecase-card">
+                    <div class="usecase-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="var(--sky-blue)" style="width: 36px; height: 36px;">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+                        </svg>
+                    </div>
+                    <h3>Corporate Wellness</h3>
+                    <p>Boost team morale. Attendant included for a fully managed experience.</p>
+                </div>
+                <div class="usecase-card">
+                    <div class="usecase-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="var(--fire-coral)" style="width: 36px; height: 36px;">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div>
+                    <h3>Wedding Weekends</h3>
+                    <p>Rehearsal recovery, groomsmen bonding, post-wedding wind-down. Attendant included.</p>
+                </div>
+                <div class="usecase-card">
+                    <div class="usecase-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="var(--sky-blue)" style="width: 36px; height: 36px;">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                        </svg>
+                    </div>
+                    <h3>Athletic Recovery</h3>
+                    <p>Reduce inflammation and accelerate recovery for your team or training group.</p>
+                </div>
+                <div class="usecase-card">
+                    <div class="usecase-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="var(--fire-coral)" style="width: 36px; height: 36px;">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+                        </svg>
+                    </div>
+                    <h3>Retreat Centers</h3>
+                    <p>Add a premium wellness offering to your retreat or special event.</p>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 32px;">
+                <a href="mailto:info@pinkponyplunge.com?subject=Event%20Rental%20Inquiry" class="btn btn-ice">Get a
+                    Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BENEFITS ========== -->
+    <section id="benefits">
+        <div class="container text-center">
+            <p class="section-label">The Science</p>
+            <h2 class="section-title">Why Contrast Therapy Works</h2>
+            <p class="section-subtitle">Backed by research. Felt immediately.</p>
+
+            <div class="benefits-grid" style="text-align: left;">
+                <div class="benefit-item">
+                    <div class="benefit-icon cool">&#10052;</div>
+                    <div>
+                        <h3>Reduce Inflammation</h3>
+                        <p>Cold exposure constricts blood vessels and reduces swelling, helping your body recover from
+                            workouts and injury.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon warm">&#9889;</div>
+                    <div>
+                        <h3>Accelerate Recovery</h3>
+                        <p>Alternating hot and cold promotes blood flow and nutrient delivery to muscles, cutting
+                            recovery time significantly.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon cool">&#128161;</div>
+                    <div>
+                        <h3>Mental Clarity & Focus</h3>
+                        <p>Cold plunge triggers a norepinephrine surge &mdash; sharpening focus, elevating mood, and
+                            building mental resilience.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon warm">&#10084;</div>
+                    <div>
+                        <h3>Enhanced Circulation</h3>
+                        <p>The hot-cold cycle acts as a vascular workout, strengthening blood vessels and improving
+                            cardiovascular health.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon cool">&#127807;</div>
+                    <div>
+                        <h3>Stress Reduction</h3>
+                        <p>Infrared heat relaxes the nervous system while cold exposure builds stress resilience through
+                            hormetic response.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon warm">&#128170;</div>
+                    <div>
+                        <h3>Immune System Support</h3>
+                        <p>Regular contrast therapy has been shown to increase white blood cell count and strengthen
+                            immune function.</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 Pink Pony Plunge LLC. All rights reserved. Campobello, South Carolina.</p>
+    <!-- ========== FAQ ========== -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">FAQ</p>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know before booking.</p>
+            </div>
+
+            <div class="faq-list">
+                <!-- General -->
+                <div class="faq-category">
+                    <h3 class="faq-category-title">General</h3>
+
+                    <details>
+                        <summary>What is contrast therapy?</summary>
+                        <p>Contrast therapy alternates between hot (sauna) and cold (plunge) exposure. This hot-cold
+                            cycling boosts circulation, reduces inflammation, speeds recovery, and delivers a powerful
+                            mood and energy boost.</p>
+                    </details>
+                    <details>
+                        <summary>What temperature is the cold plunge?</summary>
+                        <p>The Morozko maintains water between 32&deg;F and 68&deg;F. We typically set it to
+                            38&ndash;42&deg;F for optimal contrast therapy.</p>
+                    </details>
+                    <details>
+                        <summary>What temperature does the sauna reach?</summary>
+                        <p>The Clearlight infrared sauna reaches up to 170&deg;F with full spectrum infrared heat.</p>
+                    </details>
+                    <details>
+                        <summary>Is cold plunge therapy safe?</summary>
+                        <p>Cold plunge therapy is generally safe for healthy adults. However, we recommend consulting
+                            your physician before use, especially if you have heart conditions, are pregnant, or have
+                            other health concerns. All users must sign a liability waiver.</p>
+                    </details>
+                    <details>
+                        <summary>What's the minimum age?</summary>
+                        <p>Users must be 16 or older. Minors require parent/guardian consent.</p>
+                    </details>
+                </div>
+
+                <!-- Drop-In Sessions -->
+                <div class="faq-category">
+                    <h3 class="faq-category-title">Drop-In Sessions</h3>
+
+                    <details>
+                        <summary>Where are your locations?</summary>
+                        <p>We operate at partner locations including gyms, CrossFit boxes, and wellness centers across
+                            the Upstate SC region. Check back for current sites and hours.</p>
+                    </details>
+                    <details>
+                        <summary>How do I book a drop-in session?</summary>
+                        <p>Select your location, choose an available time slot, and pay online. Just show up at your
+                            scheduled time &mdash; no equipment to bring, we have everything ready.</p>
+                    </details>
+                    <details>
+                        <summary>What's included in a drop-in session?</summary>
+                        <p>Choose from cold plunge ($20/15 min), sauna ($25/30 min), or contrast combo ($40/45 min).
+                            Sessions are self-service with automated smart lock access. Towel rental available for $5.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Can I bring a friend?</summary>
+                        <p>Yes! The sauna fits 4 and the plunge fits 2. Book additional spots for your group.</p>
+                    </details>
+                    <details>
+                        <summary>How long is a session?</summary>
+                        <p>Cold plunge sessions are 15 minutes, sauna sessions are 30 minutes, and contrast combo
+                            sessions (sauna + plunge) are 45 minutes.</p>
+                    </details>
+                    <details>
+                        <summary>Do you offer memberships?</summary>
+                        <p>Yes! Our Unlimited Monthly membership ($175/month) gives you unlimited access to all services
+                            &mdash; the best value for regular plungers.</p>
+                    </details>
+                </div>
+
+                <!-- Event Rentals -->
+                <div class="faq-category">
+                    <h3 class="faq-category-title">Event Rentals</h3>
+
+                    <details>
+                        <summary>What area do you serve for event rentals?</summary>
+                        <p>We deliver within a 50-mile radius of Campobello, SC, including Tryon, Landrum, Spartanburg,
+                            Greenville, and surrounding areas.</p>
+                    </details>
+                    <details>
+                        <summary>Is there a delivery fee?</summary>
+                        <p>Delivery is free within 20 miles of Campobello. Beyond that, fees are tiered by distance.</p>
+                    </details>
+                    <details>
+                        <summary>How much space do I need?</summary>
+                        <p>You&rsquo;ll need a level surface that can accommodate our 8.5&rsquo; &times; 20&rsquo;
+                            trailer, plus room for safe access and setup.</p>
+                    </details>
+                    <details>
+                        <summary>Do I need a water hookup?</summary>
+                        <p>A standard garden hose connection is needed for the initial fill. We handle the rest.</p>
+                    </details>
+                    <details>
+                        <summary>What about electrical?</summary>
+                        <p>We require access to a 30A RV outlet or can discuss generator options. We&rsquo;ll confirm
+                            requirements during booking.</p>
+                    </details>
+                    <details>
+                        <summary>How many people can use the equipment?</summary>
+                        <p>The sauna comfortably fits 4 people; the cold plunge accommodates 2 at a time. For larger
+                            events, guests rotate through.</p>
+                    </details>
+                    <details>
+                        <summary>How far in advance should I book?</summary>
+                        <p>We require a minimum of 3 days notice. For weekends, weddings, and events, we recommend
+                            booking 2&ndash;4 weeks ahead.</p>
+                    </details>
+                    <details>
+                        <summary>What's your deposit policy?</summary>
+                        <p>We require a 50% deposit to secure your date, with the balance due before your event.</p>
+                    </details>
+                    <details>
+                        <summary>What's your cancellation policy?</summary>
+                        <p>Cancel with 7 days notice for a full refund. We also offer full refunds for weather-related
+                            cancellations &mdash; we always err on the side of the customer.</p>
+                    </details>
+                    <details>
+                        <summary>Do you stay on-site during the rental?</summary>
+                        <p>Standard rentals are self-service after we set up and orient you. An on-site attendant is
+                            available as a paid add-on, and is included for corporate events and weddings.</p>
+                    </details>
+                    <details>
+                        <summary>What about bad weather?</summary>
+                        <p>You can cancel for weather with a full refund. We&rsquo;ll work with you to reschedule if
+                            possible.</p>
+                    </details>
+                    <details>
+                        <summary>What's included in an event rental?</summary>
+                        <p>Delivery, setup, the full 4-person sauna + 2-person cold plunge experience, equipment
+                            orientation, and breakdown/pickup. See our packages for details.</p>
+                    </details>
+                </div>
+            </div>
         </div>
-    </div>
-</footer>
+    </section>
 
-<script src="script.js"></script>
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Pink Pony Plunge</h4>
+                    <p>Premium mobile sauna &amp; cold plunge experiences. Drop-in sessions and event rentals across
+                        Upstate SC.</p>
+                    <p style="margin-top: 12px;">
+                        <a href="mailto:info@pinkponyplunge.com">info@pinkponyplunge.com</a>
+                    </p>
+                    <p>Campobello, SC</p>
+                </div>
+
+                <div>
+                    <h4>Quick Links</h4>
+                    <p>
+                        <a href="#services">Services</a><br>
+                        <a href="#equipment">Equipment</a><br>
+                        <a href="#drop-in">Drop-In Sessions</a><br>
+                        <a href="#rentals">Event Rentals</a><br>
+                        <a href="#faq">FAQ</a>
+                    </p>
+                </div>
+
+                <div>
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com/pinkponyplunge" target="_blank" rel="noopener">Instagram</a>
+                        <a href="https://facebook.com/pinkponyplunge" target="_blank" rel="noopener">Facebook</a>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <h4>Stay Updated</h4>
+                        <form class="email-signup"
+                            onsubmit="event.preventDefault(); alert('Email signup coming soon!');">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pink Pony Plunge LLC. All rights reserved. Campobello, South Carolina.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
