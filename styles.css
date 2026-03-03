@@ -1032,6 +1032,71 @@ details p {
   padding: 4px 0;
 }
 
+/* --- First-Timer Banner --- */
+.first-timer-banner {
+  background: rgba(232, 98, 99, 0.08);
+  border: 2px solid var(--fire-coral);
+  border-radius: 10px;
+  padding: 16px 24px;
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--charcoal);
+  margin-bottom: 32px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.first-timer-banner strong {
+  color: var(--fire-coral);
+}
+
+/* --- PPP Difference Section --- */
+.difference-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 32px;
+  text-align: left;
+}
+
+.difference-card {
+  background: var(--white);
+  border: 1px solid var(--soft-gray);
+  border-radius: 12px;
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.difference-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  border-color: var(--fire-coral);
+}
+
+.difference-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.difference-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--charcoal);
+}
+
+.difference-card p {
+  font-size: 0.95rem;
+  color: var(--slate-gray);
+  line-height: 1.6;
+}
+
+/* --- Pricing Grid (6 items) --- */
+.pricing-grid-6 {
+  grid-template-columns: 1fr;
+}
+
 /* ============================================
    RESPONSIVE BREAKPOINTS
    ============================================ */
@@ -1134,6 +1199,14 @@ details p {
     padding: 12px 16px;
     font-size: 0.95rem;
   }
+
+  .difference-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pricing-grid-6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Desktop (1024px+) */
@@ -1154,11 +1227,19 @@ details p {
     grid-template-columns: repeat(4, 1fr);
   }
 
+  .pricing-grid-6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .usecases-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
   .included-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .difference-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
