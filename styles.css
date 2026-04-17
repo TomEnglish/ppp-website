@@ -1094,6 +1094,7 @@ details p {
 
 /* --- First-Timer Banner --- */
 .first-timer-banner {
+  display: block;
   background: rgba(232, 98, 99, 0.08);
   border: 2px solid var(--fire-coral);
   border-radius: 10px;
@@ -1101,10 +1102,17 @@ details p {
   text-align: center;
   font-size: 1.05rem;
   color: var(--charcoal);
+  text-decoration: none;
   margin-bottom: 32px;
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.first-timer-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(232, 98, 99, 0.2);
 }
 
 .first-timer-banner strong {
