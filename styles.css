@@ -381,6 +381,28 @@ section {
   opacity: 0.85;
 }
 
+.hero-promo {
+  display: inline-block;
+  margin: 20px auto 12px;
+  padding: 12px 24px;
+  background: rgba(232, 98, 99, 0.15);
+  border: 2px solid var(--fire-coral);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.hero-promo strong {
+  color: var(--fire-coral);
+}
+
+.hero-promo:hover {
+  transform: translateY(-2px);
+  background: rgba(232, 98, 99, 0.28);
+}
+
 /* --- Acuity Embed --- */
 .acuity-embed {
   margin-top: 32px;
