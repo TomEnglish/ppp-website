@@ -381,26 +381,45 @@ section {
   opacity: 0.85;
 }
 
-.hero-promo {
-  display: inline-block;
+.hero-announce {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   margin: 20px auto 12px;
-  padding: 12px 24px;
-  background: rgba(232, 98, 99, 0.15);
-  border: 2px solid var(--fire-coral);
-  border-radius: 10px;
+  padding: 10px 22px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.95rem;
   text-decoration: none;
   transition: transform 0.15s ease, background 0.15s ease;
 }
 
-.hero-promo strong {
+.hero-announce strong {
   color: var(--fire-coral);
+  letter-spacing: 0.02em;
 }
 
-.hero-promo:hover {
+.hero-announce:hover {
   transform: translateY(-2px);
-  background: rgba(232, 98, 99, 0.28);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-announce-pulse {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--fire-coral);
+  box-shadow: 0 0 0 0 rgba(232, 98, 99, 0.7);
+  animation: hero-announce-pulse 2s infinite;
+}
+
+@keyframes hero-announce-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(232, 98, 99, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(232, 98, 99, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(232, 98, 99, 0); }
 }
 
 /* --- Acuity Embed --- */
@@ -1114,33 +1133,6 @@ details p {
   padding: 4px 0;
 }
 
-/* --- First-Timer Banner --- */
-.first-timer-banner {
-  display: block;
-  background: rgba(232, 98, 99, 0.08);
-  border: 2px solid var(--fire-coral);
-  border-radius: 10px;
-  padding: 16px 24px;
-  text-align: center;
-  font-size: 1.05rem;
-  color: var(--charcoal);
-  text-decoration: none;
-  margin-bottom: 32px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.first-timer-banner:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(232, 98, 99, 0.2);
-}
-
-.first-timer-banner strong {
-  color: var(--fire-coral);
-}
-
 /* --- PPP Difference Section --- */
 .difference-grid {
   display: grid;
@@ -1278,7 +1270,10 @@ details p {
   }
 
   .rental-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .rental-card.featured {
