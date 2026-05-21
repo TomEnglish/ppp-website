@@ -1,3 +1,6 @@
 # macOS
 .DS_Store
 **/.DS_Store
+
+# Source photo originals (optimized copies live in assets/)
+PPP - Photos/

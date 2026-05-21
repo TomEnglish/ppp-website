@@ -12,7 +12,7 @@
         content="Private contrast therapy for the Upstate. Book your own session with elite equipment and automated access.">
     <meta property="og:type" content="website">
     <link rel="icon" href="assets/pink-pony.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=7">
+    <link rel="stylesheet" href="styles.css?v=8">
 </head>
 
 <body>
@@ -28,6 +28,7 @@
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#equipment">Equipment</a></li>
+                <li><a href="#inside">What's Inside?</a></li>
                 <li><a href="#sessions">Private Sessions</a></li>
                 <li><a href="#rentals">Event Rentals</a></li>
                 <li><a href="#faq">FAQ</a></li>
@@ -44,6 +45,7 @@
         <div class="mobile-menu" id="mobileMenu">
             <a href="#services">Services</a>
             <a href="#equipment">Equipment</a>
+            <a href="#inside">What's Inside?</a>
             <a href="#sessions">Private Sessions</a>
             <a href="#rentals">Event Rentals</a>
             <a href="#difference">Why PPP</a>
@@ -149,6 +151,81 @@
             </div>
         </div>
     </section>
+
+    <!-- ========== WHAT'S INSIDE? ========== -->
+    <section id="inside">
+        <div class="container">
+            <div class="text-center">
+                <p class="section-label">Take a Look</p>
+                <h2 class="section-title">What's Inside?</h2>
+                <p class="section-subtitle">Step inside the trailer. Real photos of the space &mdash; no stock images, no
+                    staged renders.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <figure class="gallery-item gallery-item-wide">
+                    <a href="assets/inside/outside-2.jpg" data-lightbox="gallery"
+                        data-caption="The Pink Pony Plunge trailer">
+                        <img src="assets/inside/outside-2-thumb.jpg" alt="The Pink Pony Plunge trailer parked outdoors"
+                            loading="lazy">
+                    </a>
+                    <figcaption>The Trailer</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <a href="assets/inside/inside-3.jpg" data-lightbox="gallery"
+                        data-caption="Inside view: full layout with sauna and plunge">
+                        <img src="assets/inside/inside-3-thumb.jpg"
+                            alt="Interior layout showing sauna, cold plunge, and bench seating" loading="lazy">
+                    </a>
+                    <figcaption>Full Layout</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <a href="assets/inside/inside-1.jpg" data-lightbox="gallery"
+                        data-caption="Sauna, cold plunge, and seating bench">
+                        <img src="assets/inside/inside-1-thumb.jpg"
+                            alt="Sauna, cold plunge, and built-in bench seating with towels" loading="lazy">
+                    </a>
+                    <figcaption>Sauna &amp; Plunge</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <a href="assets/inside/inside-2.jpg" data-lightbox="gallery"
+                        data-caption="Clearlight infrared sauna and fresh towels">
+                        <img src="assets/inside/inside-2-thumb.jpg"
+                            alt="Close-up of the Clearlight infrared sauna with cubbies of fresh towels"
+                            loading="lazy">
+                    </a>
+                    <figcaption>Sauna Detail</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <a href="assets/inside/outside-1.jpg" data-lightbox="gallery"
+                        data-caption="Pink Pony Plunge logo on the trailer">
+                        <img src="assets/inside/outside-1-thumb.jpg"
+                            alt="Pink Pony Plunge logo and trailer exterior" loading="lazy">
+                    </a>
+                    <figcaption>Pulls Up Anywhere</figcaption>
+                </figure>
+            </div>
+
+            <div class="text-center" style="margin-top: 32px;">
+                <a href="#book" class="btn btn-fire">Book a Private Session</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LIGHTBOX ========== -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photo viewer">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#10094;</button>
+        <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">&#10095;</button>
+        <figure class="lightbox-content">
+            <img id="lightboxImg" src="" alt="">
+            <figcaption id="lightboxCaption"></figcaption>
+        </figure>
+    </div>
 
     <!-- ========== PRIVATE SESSIONS ========== -->
     <section id="sessions">
@@ -673,7 +750,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
 </body>
 
 </html>
