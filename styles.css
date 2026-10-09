@@ -1746,3 +1746,148 @@ body.lightbox-open {
     height: 460px;
   }
 }
+
+/* ============================================
+   LRS WEEKEND START — remove after Mon Oct 12 ~6pm ET
+   ============================================ */
+.lrs-weekend-banner {
+  background: var(--fire-coral);
+  color: var(--white);
+  padding: 12px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.lrs-weekend-banner-inner p {
+  margin: 0;
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lrs-weekend-banner a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.lrs-weekend-banner a:hover {
+  color: var(--white);
+  opacity: 0.92;
+}
+
+.lrs-weekend-section {
+  background: var(--ice-crystal);
+  border-bottom: 1px solid var(--soft-gray);
+}
+
+.lrs-weekend-prose {
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+
+.lrs-weekend-prose p {
+  color: var(--slate-gray);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+
+.lrs-weekend-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.lrs-weekend-video {
+  max-width: 720px;
+  margin: 0 auto 32px;
+}
+
+.lrs-video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--charcoal);
+}
+
+.lrs-video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.lrs-video-fallback {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.lrs-pass-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.lrs-pass-card {
+  background: var(--white);
+  border: 1px solid var(--soft-gray);
+  border-radius: 12px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.lrs-pass-card-featured {
+  border: 2px solid var(--fire-coral);
+  box-shadow: var(--shadow-fire);
+}
+
+.lrs-pass-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  color: var(--charcoal);
+}
+
+.lrs-pass-price {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--fire-coral);
+  margin-bottom: 8px;
+}
+
+.lrs-pass-detail {
+  font-size: 0.9rem;
+  color: var(--slate-gray);
+  margin: 0;
+}
+
+.lrs-weekend-fineprint {
+  margin-top: 16px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.85rem;
+  color: var(--slate-gray);
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .lrs-weekend-banner {
+    font-size: 0.95rem;
+    padding: 14px 0;
+  }
+
+  .lrs-pass-grid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 640px;
+  }
+}
+/* LRS WEEKEND END */
